@@ -1,14 +1,17 @@
-//Initialize npm
+//Initialize npms
 const inquirer = require('inquirer');
-const jest = require('jest');
 const fs = require('fs');
+
+//Import library files
+const Shapes = require('./lib/shapes.js');
+const Test = require('./lib/shapes.test.js');
 
 //Logo maker prompts
 inquirer
 .prompt([
     {
         type: 'input',
-        message: 'What text would you like for your logo? (Max. 3 letters)',
+        message: 'What text would you like for your logo? (Max. 3 characters)',
         name: 'text',
     },
     {
@@ -23,14 +26,21 @@ inquirer
         name: 'color',
     },
 ]) 
-.then((data) => {
-    console.log('Generated logo.svg');
+.then((data) => {  
+    //Creates data class that can be exported for testing
+    class Data {
+        constructor(data) {
+            this.data = data;
+        }
+    }
+    module.exports = Data;
+    console.log('Success!');
 });
 
-const Shapes = require('./lib/shapes.js');
-const Test = require('./lib/shapes.test.js');
 
-fs.writeFile('logo.svg', data, (err) =>
-err ? console.log('write error') : console.log('Success!'));
+
+
+//fs.writeFile('logo.svg', data, (err) =>
+//err ? console.log('write error') : console.log('Generated logo.svg'));
 
 
