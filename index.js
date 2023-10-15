@@ -3,10 +3,8 @@ const inquirer = require('inquirer');
 const fs = require('fs');
 
 //Import library files
-const Circle = require('./lib/shapes.js');
-const Triangle = require('./lib/shapes.js');
-const Square = require('./lib/shapes.js');
-const Validate = require('./lib/shapes.test.js');
+//Received help from Ask BCN Learning Assistant, Andrew, in figuring out how to format require properly
+const { Circle, Triangle, Square } = require("./lib/shapes.js");
 
 //Logo maker prompts
 inquirer
@@ -29,8 +27,12 @@ inquirer
     },
 ]) 
 
-//Pass data through shapes.js
+//Received help from Ask BCN Learning Assistant, Eric, in figuring out how to pass data through shapes.js
 .then((data) => {
+        //Writes JSON file for testing 
+        fs.writeFile('input.json', JSON.stringify(data), (err) =>
+        err ? console.log('write error') : console.log('Generated JSON file'));
+
         if (data.shape == 'circle') {
             console.log(new Circle(data.color, data.shape).render(data.color, data.shape));
         } else if (data.shape == 'triangle') {
@@ -40,7 +42,10 @@ inquirer
         } else {
             console.log ('Error');
         }
+
 });
+
+
 
         //var svgShape = new Circle(color, shape);
         //console.log(svgShape);
