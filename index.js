@@ -12,19 +12,25 @@ inquirer
         name: 'text',
     },
     {
-        type: 'input',
-        message: 'What color would you like? (Type in color name or HEX#)',
-        name: 'color',
-    },
-    {
         type: 'checkbox',
         message: 'Pick a shape:',
         name: 'mark',
         choices: ['Circle', 'Triangle', 'Square'],
     },
+    {
+        type: 'input',
+        message: 'What color would you like? (Type in color name or HEX#)',
+        name: 'color',
+    },
 ]) 
 .then((data) => {
-    console.log('Success!');
+    console.log('Generated logo.svg');
 });
+
+const Shapes = require('./lib/shapes.js');
+const Test = require('./lib/shapes.test.js');
+
+fs.writeFile('logo.svg', data, (err) =>
+err ? console.log('write error') : console.log('Success!'));
 
 
