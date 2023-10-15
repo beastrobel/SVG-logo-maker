@@ -27,16 +27,10 @@ inquirer
     },
 ]) 
 .then((data) => {  
-    //Creates data class that can be exported for testing
-    class Data {
-        constructor(data) {
-            this.data = data;
-        }
-    }
-    module.exports = Data;
-    console.log('Success!');
+        //Creates JSON file that can be used for testing
+        fs.writeFile('logo-info.json', JSON.stringify(data, null, ' '), (err) =>
+        err ? console.log(err) : console.log('Created logo-info.json'));
 });
-
 
 
 
