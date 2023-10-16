@@ -1,4 +1,4 @@
-![logo](https://github.com/beastrobel/SVG-logo-maker/assets/137853377/26ac0632-3ffd-4131-9777-3dc6c4aadc3e)# SVG Logo Maker
+# SVG Logo Maker
 
 ## Description
 
@@ -14,8 +14,9 @@ The video below demonstrates the SVG Logo Maker's functionality, and the screens
 
 [SVG-Logo-Maker.webm](https://github.com/beastrobel/SVG-logo-maker/assets/137853377/16705186-9cb3-4b3b-82ed-cb81a568d94f)
 
-![<svg version="1.1" width="300" height="200" xmlns="http://www.w3.org/2000/svg">
-            <circle cx="150" cy="100" r="80" fill="purple" /><text x="150" y="125" font-size="60" text-anchor="middle" fill="white">MIA</text></svg>Uploading logo.svg…]()
+![logo](https://github.com/beastrobel/SVG-logo-maker/assets/137853377/7d90aad6-8a58-48b2-9918-6a3653d52ced)
+
+
 
 
 
