@@ -29,49 +29,42 @@ inquirer
 
 //Received help from Ask BCN Learning Assistant, Eric, in figuring out how to pass data through shapes.js
 .then((data) => {
-        //Writes JSON file for testing 
+
+        //Writes JSON file for testing suite
         fs.writeFile('input.json', JSON.stringify(data), (err) =>
         err ? console.log('write error') : console.log('Generated JSON file'));
 
+        //Determines shape
         if (data.shape == 'circle') {
-            console.log(new Circle(data.color, data.shape).render(data.color, data.shape));
+            var string = new Circle(data.color, data.shape).render(data.color, data.shape);
+            //Renders SVG file
+            function render (string) { return `<svg version="1.1" width="300" height="200" xmlns="http://www.w3.org/2000/svg">
+            ${string}<text x="150" y="125" font-size="60" text-anchor="middle" fill="white">${data.text}</text></svg>`;
+            } 
+            fs.writeFile('logo.svg', render (string), (err) =>
+            err ? console.log('write error') : console.log('Generated svg file'));
+
         } else if (data.shape == 'triangle') {
-            console.log(new Triangle(data.color, data.shape).render(data.color, data.shape));
+            string = new Triangle(data.color, data.shape).render(data.color, data.shape);
+            //Renders SVG file
+            function render (string) { return `<svg version="1.1" width="300" height="200" xmlns="http://www.w3.org/2000/svg">
+            ${string}<text x="150" y="125" font-size="60" text-anchor="middle" fill="white">${data.text}</text></svg>`;
+            } 
+            fs.writeFile('logo.svg', render (string), (err) =>
+            err ? console.log('write error') : console.log('Generated svg file'));
+
         } else if (data.shape == 'square') {
-            console.log(new Square(data.color, data.shape).render(data.color, data.shape));
+            string = new Square(data.color, data.shape).render(data.color, data.shape);
+            //Renders SVG file
+            function render (string) { return `<svg version="1.1" width="300" height="200" xmlns="http://www.w3.org/2000/svg">
+            ${string}<text x="150" y="125" font-size="60" text-anchor="middle" fill="white">${data.text}</text></svg>`;
+            } 
+            fs.writeFile('logo.svg', render (string), (err) =>
+            err ? console.log('write error') : console.log('Generated svg file'));
+
         } else {
             console.log ('Error');
         }
 
+
 });
-
-
-
-        //var svgShape = new Circle(color, shape);
-        //console.log(svgShape);
-        //var svg = `<svg version="1.1" width="300" height="200" xmlns="http://www.w3.org/2000/svg">
-        // ${svgShape}</svg>`;
-        // console.log(svg);
-        //fs.writeFile('logo.svg', svg), (err) =>
-        //err ? console.log(err) : console.log('Created logo.svg'); 
-
-    //return Shapes
-            // `<svg version="1.1" width="300" height="200" xmlns="http://www.w3.org/2000/svg">
-            // <circle cx="150" cy="100" r="80" fill="green" />
-            // <text x="150" y="125" font-size="60" text-anchor="middle" fill="white">SVG</text>
-            // </svg>`
-           // }
-        //}
-
-
-//fs.writeFile('logo.svg', data, (err) =>
-//err ? console.log('write error') : console.log('Generated logo.svg'));
-
-// render() {
-//     return `<!DOCTYPE html>
-//     <svg version="1.1" width="300" height="200" xmlns="http://www.w3.org/2000/svg">
-//     <circle cx="150" cy="100" r="80" fill='${this.color}' />
-//     <text x="150" y="125" font-size="60" text-anchor="middle" fill="white">SVG</text>
-//     </svg>
-//     </html>`;
-//   }
