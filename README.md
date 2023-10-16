@@ -22,7 +22,7 @@ The video below demonstrates the SVG Logo Maker's functionality, and the screens
 
 ## Contributing
 
-I am responsible for the development of this project. I received help from Ask BCN Learning Assistants Eric and Andrew in figuring out how to import and export modules properly.
+I am responsible for the development of this project. I received help from AskBCS Learning Assistants Eric and Andrew in figuring out how to import and export modules properly.
 
 ## License
 
